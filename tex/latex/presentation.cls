@@ -1,6 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{presentation}
 \LoadClass[draft]{beamer} 
+\usepackage{minted}
 
 \mode<presentation> { \usetheme{Madrid} }
 \setbeamersize{text margin left=18pt,text margin right=18pt}
