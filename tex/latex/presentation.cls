@@ -1,82 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{presentation}
-\LoadClass[draft]{beamer} 
-\usepackage{minted}
+\LoadClass{beamer} 
+\usepackage{base} 
 
 \mode<presentation> { \usetheme{Madrid} }
 \setbeamersize{text margin left=18pt,text margin right=18pt}
 \setbeamertemplate{footline}{}
 \beamertemplatenavigationsymbolsempty
 
+\author{Quentin Fortier}
+
 \renewcommand{\thesection}{\Roman{section}} 
-
-\usepackage{float}
-\usepackage{subcaption}
-\captionsetup[subfloat]{labelformat=empty}
-
-\usepackage{amsmath, amsfonts, amssymb, amsthm}
-\usepackage{graphicx}
-%\usepackage{fourier}
-\hypersetup{
-    colorlinks,
-    linkcolor={red!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
-}
-\usepackage{esvect}
-\pagenumbering{gobble}
-\renewcommand{\vec}[1]{\vv{#1}}
-
-\usepackage{tikz}
-\usetikzlibrary{arrows,shapes}
-\usetikzlibrary{graphs, graphdrawing}
-\usegdlibrary{force, layered, circular}
-\usetikzlibrary{automata, positioning, arrows}
-%\usegdlibrary{force, layered, circular}
-\usepackage{verbatim}
-\tikzstyle{vertex}=[circle,draw,minimum size=20pt,inner sep=0pt]
-\tikzstyle{selected vertex} = [vertex, fill=red!24]
-\tikzstyle{edge} = [draw,thick,-]
-\tikzstyle{weight} = [font=\small]
-\tikzstyle{selected edge} = [draw,line width=3pt,-,red!100]
-\tikzset{
-	->, % makes the edges directed
-	>=latex, % makes the arrow heads bold
-	 % specifies the minimum distance between two nodes. Change if necessary.
-	every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
-}
-
-\usepackage{tcolorbox}
-\newtcolorbox{algo}[2]{colback=white, coltitle = black, colbacktitle=gray!30, title=#1, width=#2, center}
-
-\everymath{\displaystyle}
-%\usefonttheme[onlymath]{serif}
-
-%\renewcommand{\Sigma}{{\scriptstyle\sum}}
-%\renewcommand{\def}{\stackrel{{def}}{=}}
-\newcommand{\floor}[1]{\lfloor #1 \rfloor}
-\newcommand{\abs}[1]{\vert #1 \vert}
-\newcommand{\ent}[1]{\llbracket #1 \rrbracket}
-\renewcommand{\epsilon}{\varepsilon}
-\renewcommand{\bar}[1]{\overline{#1}}
-\newcommand{\tq}{~\vert~}
-\renewcommand{\P}{\mathcal{P}}
-\newcommand{\V}{\mathcal{V}}
-\newcommand{\ev}[2]{\llbracket #1 \rrbracket_{#2}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\s}[1]{\lbrace #1 \rbrace}
-\newcommand{\E}[1]{\lfloor #1 \rfloor}
-\renewcommand{\r}[1]{{\color{red}#1}}
-\renewcommand{\b}[1]{{\color{blue}#1}}
-\definecolor{dkgreen}{rgb}{0.0, 0.45, 0.0}
-\newcommand{\g}[1]{{\color{dkgreen}#1}}
-\renewcommand{\c}[1]{\vert #1 \vert}
-\newcommand{\bs}[1]{\boldsymbol{#1}}
-\newcommand{\arc}[1]{\stackrel{#1}{\longrightarrow}}
-\newcommand{\code}[1]{\begin{center}
-		\fbox{\includegraphics[scale = .23]{#1}}
-	\end{center}}
