@@ -1,7 +1,7 @@
 \usepackage{float}
 \usepackage{subcaption}
 \captionsetup[subfloat]{labelformat=empty}
-
+\usepackage{parskip}
 \usepackage{amsmath, amsfonts, amssymb, amsthm}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -22,16 +22,17 @@
 \usetikzlibrary{automata, positioning, arrows}
 %\usegdlibrary{force, layered, circular}
 \usepackage{verbatim}
-\tikzstyle{vertex}=[circle,draw,minimum size=20pt,inner sep=0pt]
+\tikzstyle{vertex}=[circle,draw,minimum size=15pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
 \tikzstyle{edge} = [draw,thick,-]
 \tikzstyle{weight} = [font=\small]
 \tikzstyle{selected edge} = [draw,line width=3pt,-,red!100]
 \tikzset{
-	->, % makes the edges directed
+	-, % makes the edges directed
 	>=latex, % makes the arrow heads bold
 	 % specifies the minimum distance between two nodes. Change if necessary.
 	every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+	node distance=1cm
 }
 
 \usepackage{tcolorbox}
