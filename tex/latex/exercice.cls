@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{exercice}
-\LoadClass[twocolumn]{article}
+\LoadClassWithOptions{article}
 \usepackage{base} 
 \usepackage[top=2.5cm, bottom=2cm, left=0.5cm, right=0.5cm]{geometry}
 \usepackage{fancyhdr} % pour les en-têtes
