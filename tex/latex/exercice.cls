@@ -11,6 +11,6 @@
 \theoremstyle{definition}
 \newtheorem{ex}{Exercice}%[section]
 \newenvironment{exo}[1]
-{\begin{ex} \textbf{#1}}
+{\begin{ex} \textbf{#1}\newline}
 {\end{ex}
 \bigskip}
