@@ -16,6 +16,15 @@
 \renewcommand{\vec}[1]{\vv{#1}}
 \usepackage{minted}
 
+\usepackage{mdframed}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{emphase}
+
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes}
 \usetikzlibrary{graphs, graphdrawing}
