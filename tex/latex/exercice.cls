@@ -2,7 +2,7 @@
 \ProvidesClass{exercice}
 \LoadClassWithOptions{article}
 \usepackage{base} 
-\usepackage[top=2.5cm, bottom=1cm, left=1cm, right=1cm]{geometry}
+\usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
 \usepackage{fancyhdr} % pour les en-têtes
 
 \usepackage{enumitem}
