@@ -18,6 +18,15 @@
 \usepackage{tcolorbox}
 \newtcolorbox{algo}[2]{colback=white, coltitle=black, colbacktitle=gray!30, title=#1, width=#2, center}
 
+\usepackage{mdframed}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{emphase}
+
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes}
 \usetikzlibrary{graphs, graphdrawing}
