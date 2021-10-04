@@ -29,17 +29,17 @@
 ]{emphase}
 
 \usepackage{tikz}
-\usetikzlibrary{arrows,shapes}
-\usetikzlibrary{graphs, graphdrawing}
+\usetikzlibrary{calc, arrows, shapes, graphs, graphdrawing, automata, positioning, arrows}
 \usegdlibrary{force, layered, circular}
-\usetikzlibrary{automata, positioning, arrows}
+
 %\usegdlibrary{force, layered, circular}
 \usepackage{verbatim}
 \tikzstyle{vertex}=[circle,draw,minimum size=15pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
 \tikzstyle{edge} = [draw,thick,-]
+\tikzstyle{arc} = [draw,thick,->, >=latex]
 \tikzstyle{weight} = [font=\small]
-\tikzstyle{selected edge} = [draw,line width=3pt,-,red!100]
+\tikzstyle{selected edge} = [draw,opacity=0.3,red!100,line width=4pt]
 \tikzset{
 	-, % makes the edges directed
 	>=latex, % makes the arrow heads bold
@@ -60,7 +60,6 @@
 \renewcommand{\bar}[1]{\overline{#1}}
 \newcommand{\tq}{~\vert~}
 \renewcommand{\P}{\mathcal{P}}
-\newcommand{\V}{\mathcal{V}}
 \newcommand{\ev}[2]{\llbracket #1 \rrbracket_{#2}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -68,7 +67,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\s}[1]{\lbrace #1 \rbrace}
-\newcommand{\E}[1]{\lfloor #1 \rfloor}
+\newcommand{\e}[1]{\lfloor #1 \rfloor}
 \renewcommand{\r}[1]{{\color{red}#1}}
 \renewcommand{\b}[1]{{\color{blue}#1}}
 \definecolor{dkgreen}{rgb}{0.0, 0.45, 0.0}
@@ -82,3 +81,33 @@
 \renewcommand{\to}{\longrightarrow}
 \renewcommand{\equiv}{\longleftrightarrow}
 \renewcommand{\t}{$\blacktriangleright{}~$}
+
+\newcommand{\convexpath}[2]{
+	[   
+	create hullcoords/.code={
+		\global\edef\namelist{#1}
+		\foreach [count=\counter] \nodename in \namelist {
+			\global\edef\numberofnodes{\counter}
+			\coordinate (hullcoord\counter) at (\nodename);
+		}
+		\coordinate (hullcoord0) at (hullcoord\numberofnodes);
+		\pgfmathtruncatemacro\lastnumber{\numberofnodes+1}
+		\coordinate (hullcoord\lastnumber) at (hullcoord1);
+	},
+	create hullcoords
+	]
+	($(hullcoord1)!#2!-90:(hullcoord0)$)
+	\foreach [
+	evaluate=\currentnode as \previousnode using \currentnode-1,
+	evaluate=\currentnode as \nextnode using \currentnode+1
+	] \currentnode in {1,...,\numberofnodes} {
+		let \p1 = ($(hullcoord\currentnode) - (hullcoord\previousnode)$),
+		\n1 = {atan2(\y1,\x1) + 90},
+		\p2 = ($(hullcoord\nextnode) - (hullcoord\currentnode)$),
+		\n2 = {atan2(\y2,\x2) + 90},
+		\n{delta} = {Mod(\n2-\n1,360) - 360}
+		in 
+		{arc [start angle=\n1, delta angle=\n{delta}, radius=#2]}
+		-- ($(hullcoord\nextnode)!#2!-90:(hullcoord\currentnode)$) 
+	}
+}
