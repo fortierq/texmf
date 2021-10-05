@@ -34,10 +34,11 @@
 
 %\usegdlibrary{force, layered, circular}
 \usepackage{verbatim}
+\usetikzlibrary{arrows.meta}
 \tikzstyle{vertex}=[circle,draw,minimum size=15pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
 \tikzstyle{edge} = [draw,thick,-]
-\tikzstyle{arc} = [draw,thick,->, >=latex]
+\tikzstyle{arc} = [draw,thick,->, >=latex, -{Latex[length=3mm,width=2mm]}]
 \tikzstyle{weight} = [font=\small]
 \tikzstyle{selected edge} = [draw,opacity=0.3,red!100,line width=4pt]
 \tikzset{
