@@ -3,7 +3,7 @@
 \LoadClass{beamer} 
 \usepackage{base} 
 \newcommand{\ex}{\quad \(\rightarrow\)}
-
+\usefonttheme[onlymath]{serif}
 \mode<presentation> { \usetheme{Madrid} }
 \newcount\Level
 \let\Section=\section\def\section{\global\Level=0\Section}
