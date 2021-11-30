@@ -83,7 +83,7 @@
 \renewcommand{\c}[1]{\vert #1 \vert}
 \newcommand{\bs}[1]{\boldsymbol{#1}}
 \newcommand{\arc}[1]{\stackrel{#1}{\longrightarrow}}
-\newcommand{\code}[1]{\begin{center}
+\newcommand{\cod}[1]{\begin{center}
 		\fbox{\includegraphics[scale = .23]{#1}}
 	\end{center}}
 \renewcommand{\to}{\longrightarrow}
@@ -119,3 +119,19 @@
 		-- ($(hullcoord\nextnode)!#2!-90:(hullcoord\currentnode)$) 
 	}
 }
+
+\makeatletter
+\newenvironment{code}[1]
+ {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}%
+  \def\FV@BProcessLine##1{%
+    \hbox{%
+      \hbox to\z@{\hss\theFancyVerbLine\kern\FV@NumberSep}%
+      \FancyVerbFormatLine{##1}%
+    }%
+  }%
+  \VerbatimEnvironment
+  \setbox\z@=\hbox\bgroup
+  \begin{minted}{#1}}
+ {\end{minted}\egroup
+  \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}}
+\makeatother
