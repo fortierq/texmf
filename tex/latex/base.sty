@@ -136,6 +136,7 @@
   \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}}
 \makeatother
 
-\newcommand{\itikz}[1]{\begin{center}\includestandalone{/workspace/tikz/#1}\end{center}}
+\def\tikzpath{/workspace/tikz}
+\newcommand{\itikz}[1]{\begin{center}\includestandalone{\tikzpath/#1}\end{center}}
 
 \renewcommand{\O}{\text{O}}

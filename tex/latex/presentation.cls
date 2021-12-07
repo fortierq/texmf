@@ -18,3 +18,4 @@
 \author{Quentin Fortier}
 
 \renewcommand{\thesection}{\Roman{section}} 
+\pagenumbering{gobble}
