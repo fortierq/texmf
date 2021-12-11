@@ -6,13 +6,16 @@
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \newcommand{\headers}[3]{
-    \fancyhead[L,C]{}
-    \fancyhead[R]{\textbf{The performance of new graduates}}
-    \fancyfoot[L]{From: K. Grant}
-    \fancyfoot[C]{To: Dean A. Smith}
+    \fancyhf{}
+    \thispagestyle{fancy}
+    \setlength{\headheight}{24pt}
+    \fancyhead[L]{\Large #1}
+    \fancyhead[C]{\Large #2}
+    \fancyhead[R]{\Large #3}
 }
+\newcommand{\mpii}[2]{\headers{MP2I}{DS #1 d'informatique}{#2H}}
+
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{2pt}
 
 \newcommand{\itemb}[1]{
     \item[\ifdef{\brm}{{\color{gray}{(/#1)}} \qquad}{}\setcounter{enumi}{\value{enumi}+1}\theenumi.]
