@@ -1,4 +1,6 @@
-\usepackage[mode=buildnew]{standalone}
+\usepackage{expl3}
+\csname sys_if_shell_unrestricted:T\endcsname{\usepackage{code}} 
+
 \usepackage{float}
 \usepackage{subcaption}
 \captionsetup[subfloat]{labelformat=empty}
@@ -15,49 +17,14 @@
 \usepackage{esvect}
 \pagenumbering{gobble}
 \renewcommand{\vec}[1]{\vv{#1}}
-\usepackage{minted}
 \usepackage{tcolorbox}
 \newtcolorbox{algo}[2]{colback=white, coltitle=black, colbacktitle=gray!30, title=#1, width=#2, center}
 \renewcommand{\thesection}{\Roman{section}} 
 
-\newcommand{\cpp}[1]{\mintinline{c}{#1}}
-\newcommand{\ocaml}[1]{\mintinline{ocaml}{#1}}
-\newcommand{\python}[1]{\mintinline{python}{#1}}
-\usepackage{mdframed}
-\newmdenv[
-  topline=false,
-  bottomline=false,
-  rightline=false,
-  skipabove=\topsep,
-  skipbelow=\topsep
-]{emphase}
-
-\usepackage{tikz}
-\usetikzlibrary{calc, arrows, shapes, graphs, graphdrawing, automata, positioning, arrows}
-\usegdlibrary{force, layered, circular}
-
-%\usegdlibrary{force, layered, circular}
 \usepackage{verbatim}
-\usetikzlibrary{arrows.meta}
-\tikzstyle{vertex}=[circle,draw,minimum size=15pt,inner sep=0pt]
-\tikzstyle{selected vertex} = [vertex, fill=red!24]
-\tikzstyle{edge} = [draw,thick,-]
-\tikzstyle{arc} = [draw,thick,->, >=latex, -{Latex[length=3mm,width=2mm]}]
-\tikzstyle{weight} = [font=\small]
-\tikzstyle{selected edge} = [draw,opacity=0.3,red!100,line width=4pt]
-\tikzset{
-	-, % makes the edges directed
-	>=latex, % makes the arrow heads bold
-	 % specifies the minimum distance between two nodes. Change if necessary.
-	every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
-	node distance=1cm
-}
 
 \everymath{\displaystyle}
-%\usefonttheme[onlymath]{serif}
 
-%\renewcommand{\Sigma}{{\scriptstyle\sum}}
-%\renewcommand{\def}{\stackrel{{def}}{=}}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\abs}[1]{\vert #1 \vert}
 \newcommand{\ent}[1]{\llbracket #1 \rrbracket}
@@ -89,54 +56,4 @@
 \renewcommand{\to}{\longrightarrow}
 \renewcommand{\equiv}{\longleftrightarrow}
 \renewcommand{\t}{$\blacktriangleright{}~$}
-
-\newcommand{\convexpath}[2]{
-	[   
-	create hullcoords/.code={
-		\global\edef\namelist{#1}
-		\foreach [count=\counter] \nodename in \namelist {
-			\global\edef\numberofnodes{\counter}
-			\coordinate (hullcoord\counter) at (\nodename);
-		}
-		\coordinate (hullcoord0) at (hullcoord\numberofnodes);
-		\pgfmathtruncatemacro\lastnumber{\numberofnodes+1}
-		\coordinate (hullcoord\lastnumber) at (hullcoord1);
-	},
-	create hullcoords
-	]
-	($(hullcoord1)!#2!-90:(hullcoord0)$)
-	\foreach [
-	evaluate=\currentnode as \previousnode using \currentnode-1,
-	evaluate=\currentnode as \nextnode using \currentnode+1
-	] \currentnode in {1,...,\numberofnodes} {
-		let \p1 = ($(hullcoord\currentnode) - (hullcoord\previousnode)$),
-		\n1 = {atan2(\y1,\x1) + 90},
-		\p2 = ($(hullcoord\nextnode) - (hullcoord\currentnode)$),
-		\n2 = {atan2(\y2,\x2) + 90},
-		\n{delta} = {Mod(\n2-\n1,360) - 360}
-		in 
-		{arc [start angle=\n1, delta angle=\n{delta}, radius=#2]}
-		-- ($(hullcoord\nextnode)!#2!-90:(hullcoord\currentnode)$) 
-	}
-}
-
-\makeatletter
-\newenvironment{code}[1]
- {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}%
-  \def\FV@BProcessLine##1{%
-    \hbox{%
-      \hbox to\z@{\hss\theFancyVerbLine\kern\FV@NumberSep}%
-      \FancyVerbFormatLine{##1}%
-    }%
-  }%
-  \VerbatimEnvironment
-  \setbox\z@=\hbox\bgroup
-  \begin{minted}{#1}}
- {\end{minted}\egroup
-  \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}}
-\makeatother
-
-\def\tikzpath{/workspace/tikz}
-\newcommand{\itikz}[1]{\begin{center}\includestandalone{\tikzpath/#1}\end{center}}
-
 \renewcommand{\O}{\text{O}}

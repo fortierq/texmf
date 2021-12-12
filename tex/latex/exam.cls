@@ -1,7 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{exam}
 \LoadClassWithOptions{article}
-\usepackage{base}
 \usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm , right=1.5cm]{geometry}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
@@ -12,6 +11,7 @@
     \fancyhead[L]{\Large #1}
     \fancyhead[C]{\Large #2}
     \fancyhead[R]{\Large #3}
+% \fancyfoot[C]{{\href{https://mp2i-fsm.github.io}{https://mp2i-fsm.github.io}}}
 }
 \newcommand{\mpii}[2]{\headers{MP2I}{DS #1 d'informatique}{#2H}}
 
