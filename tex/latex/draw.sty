@@ -1,18 +1,16 @@
 \usepackage{tikz}
 \usetikzlibrary{calc, arrows, shapes, graphs, graphdrawing, automata, positioning, arrows}
 \usegdlibrary{force, layered, circular}
-\usetikzlibrary{arrows.meta}
 \tikzstyle{vertex}=[circle,draw,minimum size=15pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
-\tikzstyle{edge} = [draw,thick,-]
-\tikzstyle{arc} = [draw,thick,->, >=latex, -{Latex[length=3mm,width=2mm]}]
+\tikzstyle{edge} = [thick,-]
+\tikzstyle{arc} = [thick,>=triangle 45]
+\tikzstyle{arcthin} = [>=latex, ->]
+\tikzstyle{double} = [thick,<->]
 \tikzstyle{weight} = [font=\small]
-\tikzstyle{selected edge} = [draw,opacity=0.3,red!100,line width=4pt]
-\tikzset{
-	>=latex, % makes the arrow heads bold
-	every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
-	node distance=1cm
-}
+\tikzstyle{selected edge} = [opacity=0.3,red!100,line width=4pt]
+\tikzset{>=triangle 45}
+\tikzstyle{point}=[circle,draw,minimum size=5pt,inner sep=0pt, fill=black]
 
 \newcommand{\convexpath}[2]{
 	[   
