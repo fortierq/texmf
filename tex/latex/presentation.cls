@@ -1,7 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{presentation}
 \LoadClass{beamer} 
-\usepackage{base} 
 \newcommand{\ex}{\quad \(\rightarrow\)}
 \usefonttheme[onlymath]{serif}
 \mode<presentation> { \usetheme{Madrid} }

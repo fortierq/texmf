@@ -1,4 +1,5 @@
 \usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles}
 \usetikzlibrary{calc, arrows, shapes, graphs, graphdrawing, automata, positioning, arrows}
 \usegdlibrary{force, layered, circular}
 \tikzstyle{vertex}=[circle,draw,minimum size=15pt,inner sep=0pt]
@@ -45,3 +46,9 @@
 \usepackage[mode=buildnew]{standalone}
 \def\tikzpath{/workspace/tikz}
 \newcommand{\itikz}[1]{\begin{center}\includestandalone{\tikzpath/#1}\end{center}}
+\newcommand{\itikzpdf}[1]{\begin{center}\includegraphics{\tikzpath/#1.pdf}\end{center}}
+\newcommand{\tikzinput}[1]{
+    \begin{center}
+        \input{/workspace/tikz/#1}
+    \end{center}
+}
