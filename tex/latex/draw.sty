@@ -5,7 +5,7 @@
 \tikzstyle{vertex}=[circle,draw,minimum size=15pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
 \tikzstyle{edge} = [thick,-]
-\tikzstyle{arc} = [thick,>=triangle 45]
+\tikzstyle{arc} = [thick,>=triangle 45, ->]
 \tikzstyle{arcthin} = [>=latex, ->]
 \tikzstyle{double} = [thick,<->]
 \tikzstyle{weight} = [font=\small]
@@ -49,6 +49,6 @@
 \newcommand{\itikzpdf}[1]{\begin{center}\includegraphics{\tikzpath/#1.pdf}\end{center}}
 \newcommand{\tikzinput}[1]{
     \begin{center}
-        \input{/workspace/tikz/#1}
+        \includestandalone{/workspace/tikz/#1}
     \end{center}
 }

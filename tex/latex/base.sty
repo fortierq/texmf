@@ -17,7 +17,7 @@
 \usepackage{esvect}
 \pagenumbering{gobble}
 \renewcommand{\vec}[1]{\vv{#1}}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 \newtcolorbox{algo}[2]{colback=white, coltitle=black, colbacktitle=gray!30, title=#1, width=#2, center}
 \renewcommand{\thesection}{\Roman{section}} 
 
@@ -58,3 +58,21 @@
 \renewcommand{\equiv}{\longleftrightarrow}
 \renewcommand{\t}{$\blacktriangleright{}~$}
 \renewcommand{\O}{\text{O}}
+
+\newtcbtheorem[no counter]{Theorem}{Théorème}{
+    colback=white,
+    % colframe=structure.fg,
+    % colbacktitle=white!90!structure.fg,
+    coltitle=black,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    enhanced,
+    title=#1,
+    sharp corners,
+    colback=white,
+    fonttitle=\bfseries,
+    boxed title style={
+        sharp corners,
+        colback=white,
+        colframe=black,
+} 
+}{thm}
