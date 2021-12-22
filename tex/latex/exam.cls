@@ -4,12 +4,13 @@
 \def\class{MP2I}
 % \def\type{DS}
 \DeclareOption{cor}{\def\cor{1}}
-\DeclareOption{mp2i}{\def\class{MP2I}}
+\DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Informatique}}
+\DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
 % \DeclareOption{ds}{\def\type{DS}}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
 
-\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm , right=1.5cm]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=.8cm, right=.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \newcommand{\headers}[3]{
@@ -22,10 +23,19 @@
 % \fancyfoot[C]{{\href{https://mp2i-fsm.github.io}{https://mp2i-fsm.github.io}}}
 }
 \newcommand{\ds}[2]{\headers{\class}{DS #1\if\cor1 : corrigé \fi}{#2H}}
-\newcommand{\td}[1]{\headers{\class}{TD #1\if\cor1 : corrigé \fi}{}}
+\newcommand{\td}[2]{\headers{\class}{TD #1\if\cor1 : corrigé \fi}{\subject}}
 
 \renewcommand{\headrulewidth}{0.4pt}
 
 \newcommand{\itemb}[1]{
     \item[\ifdef{\brm}{{\color{gray}{(/#1)}} \qquad}{}\setcounter{enumi}{\value{enumi}+1}\theenumi.]
 }
+
+\usepackage{amsthm}
+\setlength{\columnseprule}{0.4pt}
+\theoremstyle{definition}
+\newtheorem{ex}{Exercice}%[section]
+\newenvironment{exo}[1]
+{\begin{ex} \textbf{#1}\newline}
+{\end{ex}
+\bigskip}
