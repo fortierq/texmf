@@ -47,8 +47,3 @@
 \def\tikzpath{/workspace}
 \newcommand{\itikz}[1]{\begin{center}\includestandalone{\tikzpath/#1}\end{center}}
 \newcommand{\tikzpdf}[2][1]{\begin{center}\includegraphics[width=#1\linewidth]{\tikzpath#2}\end{center}}
-\newcommand{\tikzinput}[1]{
-    \begin{center}
-        \includestandalone{/workspace/tikz/#1}
-    \end{center}
-}

@@ -22,13 +22,13 @@
     \fancyhead[R]{\Large #3}
 % \fancyfoot[C]{{\href{https://mp2i-fsm.github.io}{https://mp2i-fsm.github.io}}}
 }
-\newcommand{\ds}[2]{\headers{\class}{DS #1\if\cor1 : corrigé \fi}{#2H}}
+\newcommand{\ds}[2]{\headers{\class}{DS #1 (#2 H)\if\cor1 : corrigé \fi}{\subject}}
 \newcommand{\td}[2]{\headers{\class}{TD #1\if\cor1 : corrigé \fi}{\subject}}
 
 \renewcommand{\headrulewidth}{0.4pt}
 
 \newcommand{\itemb}[1]{
-    \item[\ifdef{\brm}{{\color{gray}{(/#1)}} \qquad}{}\setcounter{enumi}{\value{enumi}+1}\theenumi.]
+    \item[\ifdef{\brm}{{\color{gray}{(/#1)}} \hspace{.1cm}}{}\setcounter{enumi}{\value{enumi}+1}\theenumi.]
 }
 
 \usepackage{amsthm}

@@ -15,7 +15,7 @@
 
 \makeatletter
 \newenvironment{code}[1]
- {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}%
+ {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{numbers=none}%
   \def\FV@BProcessLine##1{%
     \hbox{%
       \hbox to\z@{\hss\theFancyVerbLine\kern\FV@NumberSep}%
@@ -24,7 +24,7 @@
   }%
   \VerbatimEnvironment
   \setbox\z@=\hbox\bgroup
-  \begin{minted}[breaklines]{#1}}
+  \begin{minted}[breaklines, linenos=false]{#1}}
  {\end{minted}\egroup
   \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}}
 \makeatother

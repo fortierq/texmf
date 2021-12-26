@@ -23,7 +23,6 @@
 
 \usepackage{verbatim}
 
-\everymath{\displaystyle}
 
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\ceil}[1]{\lceil #1 \rceil}
@@ -59,7 +58,7 @@
 \renewcommand{\t}{$\blacktriangleright{}~$}
 \renewcommand{\O}{\text{O}}
 
-\newtcbtheorem[no counter]{Theorem}{Théorème}{
+\newtcbtheorem[no counter]{Thm}{Théorème }{
     colback=white,
     % colframe=structure.fg,
     % colbacktitle=white!90!structure.fg,
@@ -78,3 +77,5 @@
 }{thm}
 
 \usepackage{hyperref}
+
+\everymath{\displaystyle}
