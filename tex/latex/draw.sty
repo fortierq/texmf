@@ -12,6 +12,8 @@
 \tikzstyle{selected edge} = [opacity=0.3,red!100,line width=4pt]
 \tikzset{>=triangle 45}
 \tikzstyle{point}=[circle,draw,minimum size=5pt,inner sep=0pt, fill=black]
+\usepackage{pgfgantt}
+\ganttset{inline, vgrid=true, y unit chart=.7cm, y unit title=.5cm, bar height=.6, title height=1}
 
 \newcommand{\convexpath}[2]{
 	[   
@@ -45,5 +47,5 @@
 
 \usepackage[mode=buildnew]{standalone}
 \def\tikzpath{/workspace}
-\newcommand{\itikz}[1]{\begin{center}\includestandalone{\tikzpath/#1}\end{center}}
+\newcommand{\itikz}[1]{\begin{center}\includestandalone{\tikzpath#1}\end{center}}
 \newcommand{\tikzpdf}[2][1]{\begin{center}\includegraphics[width=#1\linewidth]{\tikzpath#2}\end{center}}
