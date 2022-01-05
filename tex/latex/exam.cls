@@ -10,7 +10,7 @@
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
 
-\usepackage[top=1.5cm, bottom=1.5cm, left=.8cm, right=.8cm]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \newcommand{\headers}[3]{
