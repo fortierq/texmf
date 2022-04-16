@@ -2,11 +2,9 @@
 \ProvidesClass{exam}
 \def\cor{0}
 \def\class{MP2I}
-% \def\type{DS}
 \DeclareOption{cor}{\def\cor{1}}
 \DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Informatique}}
 \DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
-% \DeclareOption{ds}{\def\type{DS}}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
 
@@ -20,7 +18,6 @@
     \fancyhead[L]{\Large #1}
     \fancyhead[C]{\Large #2}
     \fancyhead[R]{\Large #3}
-% \fancyfoot[C]{{\href{https://mp2i-fsm.github.io}{https://mp2i-fsm.github.io}}}
 }
 \newcommand{\ds}[2]{\headers{\class}{DS #1 (#2 H)\if\cor1 : corrigé \fi}{\subject}}
 \newcommand{\td}[2]{\headers{\class}{TD #1\if\cor1 : corrigé \fi}{\subject}}
