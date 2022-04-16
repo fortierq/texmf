@@ -31,7 +31,7 @@
 \usepackage{amsthm}
 \setlength{\columnseprule}{0.4pt}
 \theoremstyle{definition}
-\newtheorem{ex}{Exercice}%[section]
+\newtheorem{ex}{Exercice}
 \newenvironment{exo}[1]
 {\begin{ex} \textbf{#1}\newline}
 {\end{ex}
