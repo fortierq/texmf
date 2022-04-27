@@ -28,6 +28,21 @@
   \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}}
 \makeatother
 
+\makeatletter
+\newenvironment{barecode}[1]
+ {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{numbers=none}%
+  \def\FV@BProcessLine##1{%
+    \hbox{%
+      \FancyVerbFormatLine{##1}%
+    }%
+  }%
+  \VerbatimEnvironment
+  \setbox\z@=\hbox\bgroup
+  \begin{minted}[breaklines, linenos=false, fontfamily=tt, fontsize = \small]{#1}}
+ {\end{minted}\egroup
+  \leavevmode\vbox{\kern2mm\box\z@\kern2mm}}
+\makeatother
+
 \newcommand{\icode}[1]{\begin{center}
     \fbox{\includegraphics[scale = .23]{#1}}
 \end{center}}
