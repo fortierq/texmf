@@ -23,6 +23,7 @@
 }
 \newcommand{\ds}[2]{\headers{\class}{\textbf{DS #1 (#2 H)\if\cor1 : corrigé \fi}}{\subject}}
 \newcommand{\td}[2]{\headers{\class}{TD #1\if\cor1 : corrigé \fi}{\subject}}
+\newcommand{\colle}[2]{\headers{\class}{Colle #1\if\cor1 : corrigé \fi}{\subject}}
 
 \renewcommand{\headrulewidth}{0.4pt}
 
