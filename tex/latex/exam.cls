@@ -6,6 +6,7 @@
 \DeclareOption{cor}{\def\cor{1}}
 \DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Informatique}}
 \DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
+\DeclareOption{itc1}{\def\class{MPSI} \def\subject{Informatique}}
 % \DeclareOption{ds}{\def\type{DS}}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
