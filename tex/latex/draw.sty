@@ -5,8 +5,8 @@
 \tikzstyle{vertex}=[circle,draw,minimum size=17pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
 \tikzstyle{edge} = [thick,-]
-\tikzstyle{arc} = [thick,>=triangle 45, ->]
-\tikzstyle{arcthin} = [>=latex, ->]
+\tikzstyle{arc} = [>=triangle 45, ->]
+\tikzstyle{arcthin} = [>=triangle 45, ->]
 \tikzstyle{double} = [thick,<->]
 \tikzstyle{weight} = [font=\small]
 \tikzstyle{selected edge} = [opacity=0.3,red!100,line width=4pt]
@@ -48,4 +48,4 @@
 \usepackage[mode=buildnew]{standalone}
 \def\tikzpath{/workspace}
 \newcommand{\itikz}[1]{\begin{center}\includestandalone{\tikzpath#1}\end{center}}
-\newcommand{\tikzpdf}[2][1]{\begin{center}\includegraphics[width=#1\linewidth]{\tikzpath#2}\end{center}}
+\newcommand{\tikzpdf}[2][1]{\begin{center}\includegraphics[width=#1\linewidth]{\tikzpath#2}\end{center}} % does not work
