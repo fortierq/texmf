@@ -1,12 +1,13 @@
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usetikzlibrary{overlay-beamer-styles}
 \usetikzlibrary{calc, arrows, shapes, graphs, graphdrawing, automata, positioning, arrows}
 \usegdlibrary{force, layered, circular}
 \tikzstyle{vertex}=[circle,draw,minimum size=17pt,inner sep=0pt]
 \tikzstyle{selected vertex} = [vertex, fill=red!24]
 \tikzstyle{edge} = [thick,-]
-\tikzstyle{arc} = [thick,>=triangle 45, ->]
-\tikzstyle{arcthin} = [>=latex, ->]
+% \tikzstyle{arcthick} = [thick,>=triangle 45, ->]
+\tikzstyle{arc} = [>=triangle 45, ->]
 \tikzstyle{double} = [thick,<->]
 \tikzstyle{weight} = [font=\small]
 \tikzstyle{selected edge} = [opacity=0.3,red!100,line width=4pt]
