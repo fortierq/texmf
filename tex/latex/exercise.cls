@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{exercice}
+\ProvidesClass{exercise}
 \LoadClassWithOptions{article}
 \usepackage{base} 
 \usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
