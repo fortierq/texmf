@@ -1,5 +1,6 @@
 \usepackage{expl3}
 \csname sys_if_shell_unrestricted:T\endcsname{\usepackage{code}} 
+\usepackage{xcolor}
 
 \usepackage{float}
 \usepackage{subcaption}
@@ -62,6 +63,8 @@
 \renewcommand{\equiv}{\longleftrightarrow}
 \renewcommand{\t}{$\blacktriangleright{}~$}
 \renewcommand{\O}{\text{O}}
+\newcommand{\hlr}[1]{\colorbox{lr}{#1}}
+\newcommand{\hlg}[1]{\colorbox{lg}{#1}}
 
 \newtcbtheorem[no counter]{Thm}{Théorème }{
     colback=white,
