@@ -1,6 +1,7 @@
 \usepackage{expl3}
 \csname sys_if_shell_unrestricted:T\endcsname{\usepackage{code}} 
 \usepackage{xcolor}
+\usepackage{xparse}
 
 \usepackage{float}
 \usepackage{subcaption}
@@ -44,18 +45,18 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
-\providecommand{\C}{\mathbb{C}}
-\newcommand{\s}[1]{\lbrace #1 \rbrace}
-\newcommand{\e}[1]{\lfloor #1 \rfloor}
+\newcommand{\C}{\mathbb{C}}
+\NewDocumentCommand\s{m}{\lbrace #1 \rbrace}
+\NewDocumentCommand\e{m}{\lfloor #1 \rfloor}
 \renewcommand{\r}[1]{{\color{red}#1}}
 \definecolor{burntorange}{rgb}{0.8, 0.33, 0.0}
 \renewcommand{\o}[1]{{\color{burntorange}#1}}
 \renewcommand{\b}[1]{{\color{blue}#1}}
-\newcommand{\w}[1]{{\color{white}#1}}
+\NewDocumentCommand\w{m}{{\color{white}#1}}
 \definecolor{dkgreen}{rgb}{0.0, 0.45, 0.0}
 \definecolor{lg}{rgb}{0.7, 1, 0.7}
 \definecolor{lr}{rgb}{1, 0.7, 0.7}
-\newcommand{\g}[1]{{\color{dkgreen}#1}}
+\NewDocumentCommand\g{m}{{\color{dkgreen}#1}}
 \renewcommand{\c}[1]{\vert #1 \vert}
 \newcommand{\bs}[1]{\boldsymbol{#1}}
 \newcommand{\arc}[1]{\stackrel{#1}{\longrightarrow}}
