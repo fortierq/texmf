@@ -17,9 +17,9 @@
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
 }
-\usepackage{esvect}
+% \usepackage{esvect}
+% \renewcommand{\vec}[1]{\vv{#1}}
 \pagenumbering{gobble}
-\renewcommand{\vec}[1]{\vv{#1}}
 \usepackage[most]{tcolorbox}
 \newtcolorbox{algo}[2]{coltitle=black, title=#1, width=#2, sharp corners, boxrule=.5pt, leftrule=5pt, attach boxed title to top center={yshift=0mm, xshift=0mm}, center, enhanced, boxed title style={
     colback=black!5!white,
@@ -45,7 +45,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}
+\renewcommand{\C}{\mathbb{C}}
 \NewDocumentCommand\s{m}{\lbrace #1 \rbrace}
 \NewDocumentCommand\e{m}{\lfloor #1 \rfloor}
 \renewcommand{\r}[1]{{\color{red}#1}}
@@ -70,7 +70,7 @@
 \newtcbtheorem[no counter]{Thm}{Théorème }{
     colback=white,
     % colframe=structure.fg,
-    % colbacktitle=white!90!structure.fg,
+    % colbacktitle=white!90!structure.fg,\c
     coltitle=black,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
     enhanced,
