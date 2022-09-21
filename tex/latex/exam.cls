@@ -6,9 +6,12 @@
 \DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Q. Fortier}}
 \DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
 \DeclareOption{itc1}{\def\class{MPSI} \def\subject{Q. Fortier}}
+\DeclareOption{mp}{\def\class{MP/MP* option info} \def\subject{Q. Fortier}}
 % \DeclareOption{ds}{\def\type{DS}}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
+
+\setlength{\columnsep}{.5cm}
 
 \usepackage[top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
 \usepackage{enumitem}
