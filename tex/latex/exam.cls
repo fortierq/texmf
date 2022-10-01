@@ -11,7 +11,7 @@
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
 
-\setlength{\columnsep}{.5cm}
+\setlength{\columnsep}{.7cm}
 
 \usepackage[top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
 \usepackage{enumitem}
