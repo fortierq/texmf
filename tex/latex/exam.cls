@@ -4,6 +4,7 @@
 \def\class{MP2I}
 \DeclareOption{cor}{\def\cor{1}}
 \DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Q. Fortier}}
+\DeclareOption{mpi}{\def\class{MPI} \def\subject{Q. Fortier}}
 \DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
 \DeclareOption{itc1}{\def\class{MPSI} \def\subject{Q. Fortier}}
 \DeclareOption{mp}{\def\class{MP/MP* option info} \def\subject{Q. Fortier}}
