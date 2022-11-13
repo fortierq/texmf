@@ -6,7 +6,8 @@
 \DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Q. Fortier}}
 \DeclareOption{mpi}{\def\class{MPI} \def\subject{Q. Fortier}}
 \DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
-\DeclareOption{itc1}{\def\class{MPSI} \def\subject{Q. Fortier}}
+\DeclareOption{itc1}{\def\class{ITC1} \def\subject{Q. Fortier}}
+\DeclareOption{itc2}{\def\class{ITC2} \def\subject{Q. Fortier}}
 \DeclareOption{mp}{\def\class{MP/MP* option info} \def\subject{Q. Fortier}}
 \DeclareOption{mpi}{\def\class{MPI} \def\subject{Q. Fortier}}
 % \DeclareOption{ds}{\def\type{DS}}
@@ -27,10 +28,10 @@
     \fancyhead[R]{\Large #3}
     % \fancyfoot[C]{Quentin Fortier}
 }
-\renewcommand{\title}[1]{\headers{\class}{\textbf{#1\if\cor1 : corrigé \fi}}{\subject}}
-\newcommand{\ds}[2]{\headers{\class}{\textbf{DS #1 (#2 H)\if\cor1 : corrigé \fi}}{\subject}}
+\renewcommand{\title}[1]{\headers{\class}{\textbf{#1\if\cor1 (corrigé) \fi}}{\subject}}
+\newcommand{\ds}[1]{\headers{\class}{\textbf{DS #1\if\cor1 (corrigé) \fi}}{\subject}}
 \newcommand{\td}[2]{\headers{\class}{TD #1\if\cor1 : corrigé \fi}{\subject}}
-\newcommand{\colle}[2]{\headers{\class}{Colle #1\if\cor1 : corrigé \fi}{\subject}}
+\newcommand{\colle}[2]{\headers{\class}{Colle #1\if\cor1 (corrigé) \fi}{\subject}}
 
 \renewcommand{\headrulewidth}{0.4pt}
 
