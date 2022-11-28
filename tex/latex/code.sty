@@ -39,7 +39,7 @@
   }%
   \VerbatimEnvironment
   \setbox\z@=\hbox\bgroup
-  \begin{minted}[breaklines, linenos=false, fontfamily=tt, fontsize = \small, escapeinside=§§]]{#1}}
+  \begin{minted}[breaklines, linenos=false, fontfamily=tt, fontsize = \small, escapeinside=§§]{#1}}
  {\end{minted}\egroup
   \leavevmode\vbox{\kern2mm\box\z@\kern2mm}}
 \makeatother
@@ -49,3 +49,60 @@
 \end{center}}
 
 \newcommand{\hoare}[3]{\{\ocaml{#1}\} \ocaml{#2} \{\ocaml{#3}\}}
+
+\usepackage[french,vlined]{algorithm2e}
+\DontPrintSemicolon
+\SetKwIF{Si}{SinonSi}{Sinon}{Si}{Alors}{Sinon si}{Sinon}{Fin\ Si}
+\SetKwBlock{Debut}{Début algorithme}{Fin\ algorithme}
+\SetKwFor{Pour}{Pour}{Faire}{Fin\ Pour}
+\SetKwFor{TantQue}{Tant que}{Faire}{Fin\ Tant\ que}
+\SetKw{Renv}{Renvoyer}
+\SetKwInOut{Entree}{Entrée}
+\SetKwInOut{Sortie}{Sortie}
+\SetArgSty{textup}
+\SetKwProg{Fn}{Fonction}{}{}
+
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{algo}[2]{colback=black!2!white, coltitle=black, title={#1}, width=#2, sharp corners, boxrule=.5pt, leftrule=.5pt, attach boxed title to top center={yshift=0mm, xshift=0mm}, enhanced, 
+boxed title style={
+    colback=black!2!white,
+    colframe=black,
+    boxrule=0.5pt,
+    bottomrule=0pt,
+    sharp corners
+},
+}
+
+\newtcolorbox{algolang}[3]{colback=black!2!white, coltitle=black, title=#1, width=#2, sharp corners, boxrule=.5pt, leftrule=.5pt, attach boxed title to top center={yshift=0mm, xshift=0mm}, enhanced, 
+boxed title style={
+    colback=black!2!white,
+    colframe=black,
+    boxrule=0.5pt,
+    bottomrule=0pt,
+    sharp corners
+},
+underlay={
+        \node[draw, minimum width=1cm,minimum height=0.5cm,outer sep=auto,
+        anchor=north east,fill=white] at (interior.north east)
+        {\small \cpp{#3}};
+        }
+}
+
+\newcommand{\inputalgo}[4]{
+  \begin{center}
+    \begin{algolang}{#1}{#2}{#3}
+        \inputminted[tabsize=4, linenos=false, fontfamily=tt, fontsize=\small, escapeinside=§§]{#3}{#4}
+    \end{algolang}
+  \end{center}
+}
+
+\newenvironment{algo2}[2]{
+  \begin{center}
+    \begin{algo}{#1}{#2}
+        \begin{algorithm}[H]
+} {
+        \end{algorithm}
+    \end{algo}
+  \end{center}
+}
