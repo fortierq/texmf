@@ -64,7 +64,7 @@
 \newcommand{\bs}[1]{\boldsymbol{#1}}
 \newcommand{\arc}[1]{\stackrel{#1}{\longrightarrow}}
 \renewcommand{\to}{\longrightarrow}
-\renewcommand{\equiv}{\longleftrightarrow}
+% \renewcommand{\equiv}{\longleftrightarrow}
 \renewcommand{\t}{$\blacktriangleright{}~$}
 \renewcommand{\O}{\text{O}}
 \newcommand{\hlr}[1]{\colorbox{lr}{#1}}
@@ -134,6 +134,28 @@
         boxrule=0.5pt
 } 
 }{def}
+
+\newtcolorbox{block}[1]{
+    colback=white,
+    % colframe=structure.fg,
+    % colbacktitle=white!90!structure.fg,
+    coltitle=black,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    enhanced,
+    title={#1},
+    boxrule=0.5pt,
+    titlerule=0.5pt,
+    % width=0.5\linewidth,
+    sharp corners,
+    colback=white,
+    fonttitle=\bfseries,
+    boxed title style={
+        sharp corners,
+        colback=white,
+        colframe=black,
+        boxrule=0.5pt
+    } 
+}
 
 \usepackage{hyperref}
 
