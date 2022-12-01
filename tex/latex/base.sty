@@ -50,8 +50,9 @@
 \renewcommand{\b}[1]{{\color{blue}#1}}
 \NewDocumentCommand\w{m}{{\color{white}#1}}
 \definecolor{dkgreen}{rgb}{0.0, 0.45, 0.0}
-\definecolor{lg}{rgb}{0.7, 1, 0.7}
-\definecolor{lr}{rgb}{1, 0.7, 0.7}
+\definecolor{lg}{rgb}{.7, 1, .7}
+\definecolor{lr}{rgb}{1, .7, .7}
+\definecolor{lb}{rgb}{.7, .7, 1}
 \NewDocumentCommand\g{m}{{\color{dkgreen}#1}}
 \renewcommand{\c}[1]{\vert #1 \vert}
 \newcommand{\bs}[1]{\boldsymbol{#1}}
@@ -83,6 +84,7 @@
 %         colframe=black,
 %         boxrule=0.5pt
 % } }{thm}
+\newcommand{\hlb}[1]{\colorbox{lb}{#1}}
 
 \newtcbtheorem[no counter]{Algo}{Algorithme }{
     colback=white,
