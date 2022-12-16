@@ -64,6 +64,8 @@
 
 \usepackage[most]{tcolorbox}
 
+\newtcolorbox{algonotitle}[1]{colback=black!2!white, coltitle=black, width=#1, sharp corners, boxrule=.5pt, leftrule=.5pt, enhanced}
+
 \newtcolorbox{algo}[2]{colback=black!2!white, coltitle=black, title={#1}, width=#2, sharp corners, boxrule=.5pt, leftrule=.5pt, attach boxed title to top center={yshift=0mm, xshift=0mm}, enhanced, 
 boxed title style={
     colback=black!2!white,
@@ -104,5 +106,15 @@ underlay={
 } {
         \end{algorithm}
     \end{algo}
+  \end{center}
+}
+
+\newenvironment{algonotitle2}[1]{
+  \begin{center}
+    \begin{algonotitle}{#1}
+        \begin{algorithm}[H]
+} {
+        \end{algorithm}
+    \end{algonotitle}
   \end{center}
 }
