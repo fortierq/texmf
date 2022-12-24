@@ -15,7 +15,7 @@
 ]{emphase}
 
 \makeatletter
-\newenvironment{code}[1]
+\newenvironment{code}[2][\small]
  {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{numbers=none}%
   \def\FV@BProcessLine##1{%
     \hbox{%
@@ -24,13 +24,13 @@
   }%
   \VerbatimEnvironment
   \setbox\z@=\hbox\bgroup
-  \begin{minted}[tabsize=4, breaklines, linenos=false, fontfamily=tt, fontsize=\small, escapeinside=§§]{#1}}
+  \begin{minted}[tabsize=4, breaklines, linenos=false, fontfamily=tt, fontsize=#1, escapeinside=§§]{#2}}
  {\end{minted}\egroup
   \leavevmode\vbox{\hrule\kern2mm\box\z@\kern2mm\hrule}}
 \makeatother
 
 \makeatletter
-\newenvironment{barecode}[1]
+\newenvironment{barecode}[2][\small]
  {\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{numbers=none}%
   \def\FV@BProcessLine##1{%
     \hbox{%
@@ -39,7 +39,7 @@
   }%
   \VerbatimEnvironment
   \setbox\z@=\hbox\bgroup
-  \begin{minted}[breaklines, linenos=false, fontfamily=tt, fontsize = \small, escapeinside=§§]{#1}}
+  \begin{minted}[breaklines, linenos=false, fontfamily=tt, fontsize=#1, escapeinside=§§]{#2}}
  {\end{minted}\egroup
   \leavevmode\vbox{\kern2mm\box\z@\kern2mm}}
 \makeatother
