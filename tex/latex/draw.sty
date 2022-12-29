@@ -6,13 +6,17 @@
 \tikzstyle{edge} = [thick,-]
 % \tikzstyle{arcthick} = [thick,>=triangle 45, ->]
 \tikzstyle{arc} = [>=triangle 45, ->]
-\tikzstyle{double} = [thick,<->]
+% \tikzstyle{double} = [thick,<->]
 \tikzstyle{weight} = [font=\small]
 \tikzstyle{selected edge} = [opacity=0.3,red!100,line width=4pt]
-\tikzset{>=triangle 45}
+% \tikzset{>=triangle 45}
 \tikzstyle{point}=[circle,draw,minimum size=5pt,inner sep=0pt, fill=black]
+
+\tikzstyle{automata} = [->, >=stealth',shorten >=1pt, node distance=2cm, initial text=]
+
 \usepackage{pgfgantt}
 \ganttset{inline, vgrid=true, y unit chart=.7cm, y unit title=.5cm, bar height=.58, title height=1}
+
 
 \newcommand{\convexpath}[2]{
 	[   
