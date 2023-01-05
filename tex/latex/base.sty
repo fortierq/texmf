@@ -88,6 +88,11 @@
 % } }{thm}
 \newcommand{\hlb}[1]{\colorbox{lb}{#1}}
 
+\newcommand{\corr}{
+    \ifdefined\cor \else
+    \def\cor{1}
+    \fi
+}
 \newtcbtheorem[no counter]{Algo}{Algorithme }{
     colback=white,
     % colframe=structure.fg,
