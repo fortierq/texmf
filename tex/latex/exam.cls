@@ -3,18 +3,19 @@
 \def\cor{0}
 \def\class{MP2I}
 \DeclareOption{cor}{\def\cor{1}}
+\DeclareOption{resume}{\def\class{Résumé} \def\subject{Q. Fortier}}
 \DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Q. Fortier}}
 \DeclareOption{mpi}{\def\class{MPI} \def\subject{Q. Fortier}}
 \DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
 \DeclareOption{itc1}{\def\class{ITC1} \def\subject{Q. Fortier}}
 \DeclareOption{itc2}{\def\class{ITC2} \def\subject{Q. Fortier}}
-\DeclareOption{mp}{\def\class{MP/MP* option info} \def\subject{Q. Fortier}}
+\DeclareOption{mp}{\def\class{MP/MP* option} \def\subject{Q. Fortier}}
 \DeclareOption{mpi}{\def\class{MPI} \def\subject{Q. Fortier}}
 % \DeclareOption{ds}{\def\type{DS}}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
 
-\setlength{\columnsep}{.7cm}
+\setlength{\columnsep}{.4cm}
 
 \usepackage[top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
 \usepackage{enumitem}
