@@ -14,7 +14,7 @@
 \setbeamertemplate{footline}{}
 \beamertemplatenavigationsymbolsempty
 
-\author{Quentin Fortier}
+\author{\href{https://fortierq.github.io}{Quentin Fortier}}
 
 \renewcommand{\thesection}{\Roman{section}} 
 \pagenumbering{gobble}

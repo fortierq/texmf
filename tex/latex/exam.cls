@@ -2,15 +2,16 @@
 \ProvidesClass{exam}
 \def\cor{0}
 \def\class{MP2I}
+\def\qfortier{\href{https://fortierq.github.io}{Q. Fortier}}
 \DeclareOption{cor}{\def\cor{1}}
-\DeclareOption{resume}{\def\class{Résumé} \def\subject{Q. Fortier}}
-\DeclareOption{mp2i}{\def\class{MP2I} \def\subject{Q. Fortier}}
-\DeclareOption{mpi}{\def\class{MPI} \def\subject{Q. Fortier}}
+\DeclareOption{resume}{\def\class{Résumé} \def\subject{\qfortier}}
+\DeclareOption{mp2i}{\def\class{\href{https://mp2i-info.github.io}{MP2I}}\def\subject{\qfortier}}
+\DeclareOption{mpi}{\def\class{MPI} \def\subject{\qfortier}}
 \DeclareOption{ocia}{\def\class{M1 IA} \def\subject{OC}}
-\DeclareOption{itc1}{\def\class{ITC1} \def\subject{Q. Fortier}}
-\DeclareOption{itc2}{\def\class{ITC2} \def\subject{Q. Fortier}}
-\DeclareOption{mp}{\def\class{MP/MP* option} \def\subject{Q. Fortier}}
-\DeclareOption{mpi}{\def\class{MPI} \def\subject{Q. Fortier}}
+\DeclareOption{itc1}{\def\class{ITC1} \def\subject{\qfortier}}
+\DeclareOption{itc2}{\def\class{\href{https://cpge-itc.github.io/itc2}{ITC2}} \def\subject{\qfortier}}
+\DeclareOption{mp}{\def\class{\href{https://mp-info.github.io}{MP/MP* option}} \def\subject{\qfortier}}
+\DeclareOption{mpi}{\def\class{MPI} \def\subject{\qfortier}}
 % \DeclareOption{ds}{\def\type{DS}}
 \ProcessOptions\relax
 \LoadClassWithOptions{article}
