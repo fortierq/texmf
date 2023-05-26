@@ -10,6 +10,9 @@
 \usepackage{multicol}
 \usepackage[mode=buildnew]{standalone}
 \usepackage{makecell}
+\usepackage{enumitem}
+\newlist{questions}{enumerate}{2}
+\setlist[questions]{ label={\arabic*.}, resume }
 
 \usepackage{ebproof}
 \usepackage{float}
@@ -69,6 +72,7 @@
 \renewcommand{\O}{\text{O}}
 \newcommand{\hlr}[1]{\colorbox{lr}{#1}}
 \newcommand{\hlg}[1]{\colorbox{lg}{#1}}
+\renewcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 
 % \newtcbtheorem[no counter]{Thm}{Théorème}{
 %     colback=white,
@@ -142,6 +146,28 @@
 }{def}
 
 \newtcolorbox{thm}[1]{
+    colback=white,
+    % colframe=structure.fg,
+    % colbacktitle=white!90!structure.fg,
+    coltitle=black,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    enhanced,
+    title={#1},
+    boxrule=0.5pt,
+    titlerule=0.5pt,
+    % width=0.5\linewidth,
+    sharp corners,
+    colback=white,
+    fonttitle=\bfseries,
+    boxed title style={
+        sharp corners,
+        colback=white,
+        colframe=black,
+        boxrule=0.5pt
+    } 
+}
+
+\newtcolorbox{pb}[1]{
     colback=white,
     % colframe=structure.fg,
     % colbacktitle=white!90!structure.fg,
