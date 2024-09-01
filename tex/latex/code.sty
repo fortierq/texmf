@@ -92,13 +92,25 @@ underlay={
         {\small \cpp{#3}};
         }
 }
-
+\newtcolorbox{algolangnotitle}[1]{colback=white, sharp corners, boxrule=.5pt, leftrule=.5pt, enhanced, 
+underlay={
+        \node[draw, minimum width=1cm,minimum height=0.5cm,outer sep=auto,
+        anchor=north east,fill=white] at (interior.north east)
+        {\small \cpp{#1}};
+        }
+}
 \newcommand{\inputalgo}[4]{
   \begin{center}
     \begin{algolang}{#1}{#2}{#3}
         \inputminted[tabsize=4, linenos=false, fontfamily=tt, fontsize=\small, escapeinside=§§]{#3}{#4}
     \end{algolang}
   \end{center}
+}
+
+\newcommand{\inputcode}[3]{
+    \begin{algolangnotitle}{#1}
+        \inputminted[escapeinside=§§]{#2}{#3}
+    \end{algolangnotitle}
 }
 
 \newenvironment{algo2}[2]{
@@ -119,4 +131,10 @@ underlay={
         \end{algorithm}
     \end{algonotitle}
   \end{center}
+}
+
+\newenvironment{codecours}[1]{
+  \begin{minted}[frame=single,framesep=5pt]{#1}
+} {
+  \end{minted}
 }

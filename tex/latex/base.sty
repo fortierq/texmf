@@ -122,14 +122,36 @@
 } 
 }{Algo}
 
-\newtcbtheorem[no counter]{Def}{Définition }{
+% \newtcbtheorem[no counter]{Def}{Définition }{
+%     colback=white,
+%     % colframe=structure.fg,
+%     % colbacktitle=white!90!structure.fg,
+%     coltitle=black,
+%     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+%     enhanced,
+%     title=#1,
+%     boxrule=0.5pt,
+%     titlerule=0.5pt,
+%     % width=0.5\linewidth,
+%     sharp corners,
+%     colback=white,
+%     fonttitle=\bfseries,
+%     boxed title style={
+%         sharp corners,
+%         colback=white,
+%         colframe=black,
+%         boxrule=0.5pt
+% } 
+% }{def}
+
+\newtcolorbox{thm}[1]{
     colback=white,
     % colframe=structure.fg,
     % colbacktitle=white!90!structure.fg,
     coltitle=black,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
     enhanced,
-    title=#1,
+    title={Théorème : #1},
     boxrule=0.5pt,
     titlerule=0.5pt,
     % width=0.5\linewidth,
@@ -141,17 +163,17 @@
         colback=white,
         colframe=black,
         boxrule=0.5pt
-} 
-}{def}
+    } 
+}
 
-\newtcolorbox{thm}[1]{
+\newtcolorbox{Def}[1]{
     colback=white,
     % colframe=structure.fg,
     % colbacktitle=white!90!structure.fg,
     coltitle=black,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
     enhanced,
-    title={#1},
+    title={Définition : #1},
     boxrule=0.5pt,
     titlerule=0.5pt,
     % width=0.5\linewidth,
@@ -191,3 +213,11 @@
 \usepackage{hyperref}
 
 \everymath{\displaystyle}
+
+\newcommand{\remplir}[1]{\color{white}{\Large{#1}}}
+\newcommand{\remplirdef}[2]{
+    \begin{Def}{#1}
+        \remplir{#2}
+    \end{Def}
+}
+\newcommand{\completer}[1]{\foreach \n in {1,...,#1}{\noindent\rule{\textwidth}{0.01cm}\newline}}
