@@ -32,8 +32,8 @@
 \pagenumbering{gobble}
 \usepackage[most]{tcolorbox}
 \renewcommand{\thesection}{\Roman{section}} 
-
 \usepackage{verbatim}
+\usepackage{tabularray}
 
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\ceil}[1]{\lceil #1 \rceil}
@@ -72,27 +72,6 @@
 \newcommand{\hlg}[1]{\colorbox{lg}{#1}}
 \renewcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \renewcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
-
-% \newtcbtheorem[no counter]{Thm}{Théorème}{
-%     colback=white,
-%     % colframe=structure.fg,
-%     % colbacktitle=white!90!structure.fg,\c
-%     coltitle=black,
-%     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
-%     enhanced,
-%     title=#1,
-%     boxrule=0.5pt,
-%     titlerule=0.5pt,
-%     % width=0.5\linewidth,
-%     sharp corners,
-%     colback=white,
-%     fonttitle=\bfseries,
-%     boxed title style={
-%         sharp corners,
-%         colback=white,
-%         colframe=black,
-%         boxrule=0.5pt
-% } }{thm}
 \newcommand{\hlb}[1]{\colorbox{lb}{#1}}
 
 \newcommand{\corr}{
@@ -122,39 +101,33 @@
 } 
 }{Algo}
 
-% \newtcbtheorem[no counter]{Def}{Définition }{
-%     colback=white,
-%     % colframe=structure.fg,
-%     % colbacktitle=white!90!structure.fg,
-%     coltitle=black,
-%     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
-%     enhanced,
-%     title=#1,
-%     boxrule=0.5pt,
-%     titlerule=0.5pt,
-%     % width=0.5\linewidth,
-%     sharp corners,
-%     colback=white,
-%     fonttitle=\bfseries,
-%     boxed title style={
-%         sharp corners,
-%         colback=white,
-%         colframe=black,
-%         boxrule=0.5pt
-% } 
-% }{def}
-
 \newtcolorbox{thm}[1]{
     colback=white,
-    % colframe=structure.fg,
-    % colbacktitle=white!90!structure.fg,
     coltitle=black,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
     enhanced,
     title={Théorème : #1},
     boxrule=0.5pt,
     titlerule=0.5pt,
-    % width=0.5\linewidth,
+    sharp corners,
+    colback=white,
+    fonttitle=\bfseries,
+    boxed title style={
+        sharp corners,
+        colback=white,
+        colframe=black,
+        boxrule=0.5pt
+    } 
+}
+
+\newtcolorbox{thmm}{
+    colback=white,
+    coltitle=black,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    enhanced,
+    title={Théorème},
+    boxrule=0.5pt,
+    titlerule=0.5pt,
     sharp corners,
     colback=white,
     fonttitle=\bfseries,
@@ -168,15 +141,31 @@
 
 \newtcolorbox{Def}[1]{
     colback=white,
-    % colframe=structure.fg,
-    % colbacktitle=white!90!structure.fg,
     coltitle=black,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
     enhanced,
     title={Définition : #1},
     boxrule=0.5pt,
     titlerule=0.5pt,
-    % width=0.5\linewidth,
+    sharp corners,
+    colback=white,
+    fonttitle=\bfseries,
+    boxed title style={
+        sharp corners,
+        colback=white,
+        colframe=black,
+        boxrule=0.5pt
+    } 
+}
+
+\newtcolorbox{Prop}{
+    colback=white,
+    coltitle=black,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    enhanced,
+    title={Propriété},
+    boxrule=0.5pt,
+    titlerule=0.5pt,
     sharp corners,
     colback=white,
     fonttitle=\bfseries,
@@ -190,15 +179,12 @@
 
 \newtcolorbox{pb}[1]{
     colback=white,
-    % colframe=structure.fg,
-    % colbacktitle=white!90!structure.fg,
     coltitle=black,
     attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
     enhanced,
     title={#1},
     boxrule=0.5pt,
     titlerule=0.5pt,
-    % width=0.5\linewidth,
     sharp corners,
     colback=white,
     fonttitle=\bfseries,
@@ -220,4 +206,17 @@
         \remplir{#2}
     \end{Def}
 }
-\newcommand{\completer}[1]{\foreach \n in {1,...,#1}{\noindent\rule{\textwidth}{0.01cm}\newline}}
+\newcommand{\completer}[1]{\foreach \n in {2,...,#1}{\noindent\rule{\textwidth}{.1pt}\vspace{.5\baselineskip}\newline}\noindent\rule{\textwidth}{.1pt}}
+\newcommand{\completerdef}[2]{
+    \begin{Def}{#1}
+        ~\newline
+        \completer{#2}
+        \vspace{-.5\baselineskip}
+    \end{Def}
+}
+
+\newenvironment{goat}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
