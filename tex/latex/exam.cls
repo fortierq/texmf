@@ -31,6 +31,7 @@
 }
 \renewcommand{\title}[1]{\headers{\class}{\textbf{#1\if\cor1 (corrigé) \fi}}{\subject}}
 \newcommand{\ds}[1]{\headers{\class}{\textbf{DS #1\if\cor1 (corrigé) \fi}}{\subject}}
+\newcommand{\dm}[1]{\headers{\class}{\textbf{DM #1\if\cor1 (corrigé) \fi}}{\subject}}
 \newcommand{\td}[2]{\headers{\class}{TD #1\if\cor1 : corrigé \fi}{\subject}}
 \newcommand{\colle}[2]{\headers{\class}{Colle #1\if\cor1 (corrigé) \fi}{\subject}}
 

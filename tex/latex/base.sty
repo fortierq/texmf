@@ -139,6 +139,25 @@
     } 
 }
 
+\newtcolorbox{lemme}{
+    colback=white,
+    coltitle=black,
+    attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+    enhanced,
+    title={Lemme},
+    boxrule=0.5pt,
+    titlerule=0.5pt,
+    sharp corners,
+    colback=white,
+    fonttitle=\bfseries,
+    boxed title style={
+        sharp corners,
+        colback=white,
+        colframe=black,
+        boxrule=0.5pt
+    } 
+}
+
 \newtcolorbox{Def}[1]{
     colback=white,
     coltitle=black,
@@ -215,8 +234,9 @@
     \end{Def}
 }
 
-\newenvironment{goat}
-  {\par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup}
-  {\par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd}
+% \newenvironment{correction}
+%   {\if\cor1
+%   \begin{emphase}
+%       \underline{Solution} :}
+%   {\end{emphase}
+%   \fi}
